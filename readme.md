@@ -43,6 +43,14 @@ python app.py
 pip install torch
 ```
 
+```
+conda create -n gpt2 python=3.8
+conda activate gpt2
+pip install -r requirements.txt
+pip install torch
+python app.py
+```
+
 ## 演示
 ![问题1](./demo/1.png)
 
