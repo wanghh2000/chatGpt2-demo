@@ -44,11 +44,49 @@ pip install torch
 ```
 
 ```
+# app.py
 conda create -n gpt2 python=3.8
 conda activate gpt2
 pip install -r requirements.txt
 pip install torch
 python app.py
+```
+
+```
+# chatglm.py
+conda create -n chatglm python=3.8
+conda activate chatglm
+
+pip install transformers sentencepiece cpm_kernels
+
+# torch on gpu
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
+# pytorch on cpu
+pip install torch torchvision torchaudio  
+
+python chatglm.py
+```
+
+https://github.com/THUDM/ChatGLM2-6B
+
+```
+#chatglm2-6b-int4.py
+
+conda create -n chatgpt2 python=3.8
+conda activate chatgpt2
+
+pip install protobuf
+pip install transformers==4.30.2
+pip install cpm_kernels
+pip install torch>=2.0
+pip install gradio
+pip install mdtex2html
+pip install sentencepiece
+pip install accelerate
+pip install sse-starlette
+pip install streamlit>=1.24.0
+
+python chatglm2-6b-int4.py
 ```
 
 ## 演示
