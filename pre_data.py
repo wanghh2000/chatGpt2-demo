@@ -57,7 +57,7 @@ print('************************************************')
 question = "服务器有几块硬盘？"
 print('question=>', question)
 similarDocs = db.similarity_search(question, include_metadata=True, k=2)
-print('similarDocs=>', similarDocs)
+print('len(similarDocs)=>', len(similarDocs))
 for x in similarDocs:
     print('x=>', x)
 
