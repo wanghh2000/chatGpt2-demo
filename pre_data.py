@@ -4,6 +4,7 @@
 # 加载文件 → 读取文件 → 文本分割 → 文本向量化 → 问题向量化 → 在文本向量中匹配与问题最相近的TopK → 匹配出的文本作为上下文与问题一起添加进prompt → 提交给LLM生成回答
 
 # pip install langchain docx2txt sentence_transformers
+# pip install --use-pep517 faiss-gpu
 
 # 1. 载入本地文档，并切片成若干小片段
 from langchain.document_loaders import Docx2txtLoader
@@ -29,7 +30,8 @@ from langchain.embeddings.huggingface import HuggingFaceEmbeddings
 import sentence_transformers
 
 # EMBEDDING_MODEL = "C:/tmp/text2vec_ernie/"
-EMBEDDING_MODEL = "nghuyong/ernie-3.0-base-zh"
+# EMBEDDING_MODEL = "nghuyong/ernie-3.0-base-zh"
+EMBEDDING_MODEL =  "GanymedeNil/text2vec-large-chinese"
 
 embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
 embeddings.client = sentence_transformers.SentenceTransformer(embeddings.model_name, device='cuda')
